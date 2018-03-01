@@ -19,6 +19,7 @@ void setup() {
 }
 
 void loop() {
+  /*
   digitalWrite(8,HIGH);
   lcd.clear();
   lcd.setCursor(0,0);
@@ -170,39 +171,43 @@ void loop() {
   lcd.setCursor(0,1);
   lcd.print("GUESS!");
   delay(500);lcd.clear();delay(500);
+  */
+  
   /*
    * 
    * This following code is for you to explorer.
+   *
+    */
   // when characters arrive over the serial port...
-  //row = 0;
- // column = 0;
-  //if (Serial.available() > 1) {
-    //digitalWrite(8,HIGH);
-    //delay(100);
-      //    lcd.clear();
-        //  while (Serial.available() > 0) {
-          //  Serial.print("go \n ");
-            //if(column > 15){
-              //Serial.print("more than 16, the row is");
-              //Serial.print(row);
-              //if(row = 01){
-                //row = 1;
-                //lcd.setCursor(0,1);
-                //Serial.print("indent");
-                //column = 0;
-                //row = 1;
-              //}
-              //else{
-                //lcd.setCursor(0,0);
-                //column = 0;
-              //}
-            //}
-            //lcd.write(Serial.read());
-            //column++;
-            //Serial.print(column);
-            //}
+  row = 0;
+  column = 0;
+  if (Serial.available() > 1) {
+    digitalWrite(8,HIGH);
+    delay(100);
+         lcd.clear();
+          while (Serial.available() > 0) {
+            Serial.print("go \n ");
+            if(column > 15){
+              Serial.print("more than 16, the row is");
+              Serial.print(row);
+              if(row = 01){
+                row = 1;
+                lcd.setCursor(0,1);
+                Serial.print("indent");
+                column = 0;
+                row = 1;
+              }
+              else{
+                lcd.setCursor(0,0);
+                column = 0;
+              }
+            }
+            lcd.write(Serial.read());
+            column++;
+            Serial.print(column);
+            }
      
-  //}*/
+  }
   
 }
 
